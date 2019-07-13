@@ -1,0 +1,69 @@
+{
+  "private": true,
+  "version": "0.0.9",
+  "name": "twitch_command_bot",
+  "description": "",
+  "license": "MIT",
+  "homepage": "https://github.com/allpaqa-jgk/twitch_command_bot",
+  "bug": "https://github.com/allpaqa-jgk/twitch_command_bot/issues",
+  "repository": "https://github.com/allpaqa-jgk/twitch_command_bot",
+  "author": {
+    "name": "allpaqa-jgk"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "config/*.sample",
+    ".eslintrc.js",
+    ".gitignore",
+    ".vscode",
+    "data/.keep",
+    "data/emoteList.csv",
+    "tmp/.keep",
+    "build.js",
+    "main.js",
+    "update_emote.js",
+    "src",
+    "package.json",
+    "yarn.lock"
+  ],
+  "main": "main.js",
+  "scripts": {
+    "dev": "NODE_ENV=development node --unhandled-rejections=strict ./main.js",
+    "start": "node --unhandled-rejections=strict ./main.js",
+    "lint": "eslint src",
+    "update_emote": "node ./updateEmote.js",
+    "build": "node ./build.js"
+  },
+  "engines": {
+    "node": "^12.6.0",
+    "yarn": "^1.22.0"
+  },
+  "dependencies": {
+    "config": "^3.3.6",
+    "csv": "^5.1",
+    "csv-parse": "^4.4",
+    "discord.js": "^12.5",
+    "forever": "^4.0.1",
+    "forever-monitor": "^3.0.3",
+    "lodash.merge": "4.6.2",
+    "log4js": "^6.3.0",
+    "play-sound": "^1.1",
+    "request": "^2.34",
+    "request-promise": "^4.2",
+    "tmi.js": "^1.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-cli": "^1.1.1",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "nexe": "^3.3.7",
+    "prettier": "^1.16.4"
+  }
+}
