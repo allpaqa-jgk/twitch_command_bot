@@ -1,6 +1,6 @@
 {
   "private": true,
-  "version": "0.0.9",
+  "version": "0.0.1",
   "name": "twitch_command_bot",
   "description": "",
   "license": "MIT",
@@ -33,7 +33,7 @@
     "start": "node --unhandled-rejections=strict ./main.js",
     "lint": "eslint src",
     "update_emote": "node ./updateEmote.js",
-    "build": "node ./build.js"
+    "build": "node --unhandled-rejections=strict ./build.js"
   },
   "engines": {
     "node": "^12.6.0",

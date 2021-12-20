@@ -7,16 +7,16 @@ async function runBuild() {
   let options;
   options = {
     targetNode: "mac-x64-12.6.0",
-    targetDir: "twitch_tts_bot_for_mac",
-    name: "twitch_tts_bot",
+    targetDir: "twitch_command_bot_for_mac",
+    name: "twitch_command_bot",
   };
 
   await makeReleaseFiles(options);
 
   options = {
     targetNode: "windows-x64-12.6.0",
-    targetDir: "twitch_tts_bot_for_win",
-    name: "twitch_tts_bot",
+    targetDir: "twitch_command_bot_for_win",
+    name: "twitch_command_bot",
   };
   await makeReleaseFiles(options);
 }
@@ -35,10 +35,8 @@ async function makeReleaseFiles(options) {
 
   const dirList = [
     { name: "./", addKeepFile: false },
-    { name: "./node_modules", addKeepFile: false },
     { name: "./config", addKeepFile: false },
-    { name: "./data", addKeepFile: true },
-    { name: "./tmp", addKeepFile: true },
+    { name: "./data", addKeepFile: false },
   ];
 
   dirList.forEach((dir) => {
@@ -76,16 +74,7 @@ async function makeReleaseFiles(options) {
 
       const copyFiles = [
         { name: "./config/default.js.sample", option: "" },
-        { name: "./config/serviceAccount.json.sample", option: "" },
-        { name: "./data/messageIgnoreList.csv", option: "" },
-
-        // for test of build artifacts
-        // {name: './config/default.js', option: ''},
-        // {name: './config/serviceAccount.json', option: ''},
-
-        // @TODO: remove this
-        // I don't know why, but only google-gax is not available from default nexe build flow.
-        { name: "./node_modules/google-gax", option: "-pr" },
+        { name: "./data/omikujiList.csv.sample", option: "" },
       ];
 
       copyFiles.forEach((target) => {
