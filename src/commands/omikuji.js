@@ -19,9 +19,9 @@ logger.debug("omikujiList", omikujiListObjects);
 
 // Function called when the "dice" command is issued
 function pick(target, context, comment) {
-  const rand = Math.random() * max;
+  const rand = Math.floor(Math.random() * max);
   const pickedRecord = omikujiListObjects.find((element) => rand < element.key);
-  console.debug(rand, pickedRecord);
+  logger.debug(rand, pickedRecord);
 
   const message = `${title}: ${pickedRecord.value}`;
   return message;
