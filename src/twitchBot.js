@@ -56,9 +56,7 @@ function onMessageHandler(target, context, msg, self) {
   // If the command is known, let's execute it
   if (comment.match(/^!omikuji/)) {
     logger.debug("command was triggered: omikuji");
-    const message = omikuji.pick(target, context, comment);
-    logger.info("message:", message);
-    client.say(target, message);
+    omikuji.pick(client, target, context, comment);
   } else {
     return;
   }
